@@ -6,6 +6,7 @@
 </tr>
 <tr>
 <td>
+<a href="#6.3.1">6.3.1</a><br/>
 <a href="#6.3.0">6.3.0</a><br/>
 <a href="#6.2.2">6.2.2</a><br/>
 <a href="#6.2.1">6.2.1</a><br/>
@@ -27,6 +28,90 @@
 **Note:** The v6 release line will be covered by the
 [Node.js Long Term Support plan](https://github.com/nodejs/LTS) starting in
 October 2016.
+
+<a id="6.3.1"></a>
+
+## 2016-07-20, Version 6.3.1 (Current), @evanlucas
+
+### Notable changes
+
+* **deps**: upgrade to V8 5.0.71.54 (Ben Noordhuis) [#7531](https://github.com/nodejs/node/pull/7531)
+* **win,msi**:
+  * add zh-CN translations for the installer (Minqi Pan) [#2569](https://github.com/nodejs/node/pull/2569)
+  * Added Italian translation (Matteo Collina) [#4647](https://github.com/nodejs/node/pull/4647)
+
+### Commits
+
+* [[`3747d910ec`](https://github.com/nodejs/node/commit/3747d910ec)] - **benchmark**: remove unused variables (Rich Trott) [#7600](https://github.com/nodejs/node/pull/7600)
+* [[`ba6ab7cb37`](https://github.com/nodejs/node/commit/ba6ab7cb37)] - **buffer**: optimize hex_decode (Christopher Jeffrey) [#7602](https://github.com/nodejs/node/pull/7602)
+* [[`3b767b86bd`](https://github.com/nodejs/node/commit/3b767b86bd)] - **buffer**: fix creating from zero-length ArrayBuffer (Ingvar Stepanyan) [#7176](https://github.com/nodejs/node/pull/7176)
+* [[`4480b14fda`](https://github.com/nodejs/node/commit/4480b14fda)] - **build**: use BUILDTYPE when building V8 in Makefile (Michaël Zasso) [#7482](https://github.com/nodejs/node/pull/7482)
+* [[`94a486a388`](https://github.com/nodejs/node/commit/94a486a388)] - **build**: add v8 requirement to test-v8* in Makefile (Michaël Zasso) [#7482](https://github.com/nodejs/node/pull/7482)
+* [[`e5627278f1`](https://github.com/nodejs/node/commit/e5627278f1)] - **build**: add --enable-d8 configure option (Ben Noordhuis) [#7538](https://github.com/nodejs/node/pull/7538)
+* [[`933ff62fa5`](https://github.com/nodejs/node/commit/933ff62fa5)] - **build**: respect --shared-* flags for inspector deps (Сковорода Никита Андреевич) [#7569](https://github.com/nodejs/node/pull/7569)
+* [[`a855b300d5`](https://github.com/nodejs/node/commit/a855b300d5)] - **cluster**: remove bind() and self (cjihrig) [#7710](https://github.com/nodejs/node/pull/7710)
+* [[`f3182f6971`](https://github.com/nodejs/node/commit/f3182f6971)] - **deps**: v8_inspector no longer depends on wtf (Ali Ijaz Sheikh) [#7751](https://github.com/nodejs/node/pull/7751)
+* [[`3bd40ff5ca`](https://github.com/nodejs/node/commit/3bd40ff5ca)] - **deps**: no /safeseh for ml64.exe (Fedor Indutny) [#7759](https://github.com/nodejs/node/pull/7759)
+* [[`c10ade917a`](https://github.com/nodejs/node/commit/c10ade917a)] - **deps**: back-port d721121 from v8 upstream (Ben Noordhuis) [#7633](https://github.com/nodejs/node/pull/7633)
+* [[`dbdcded866`](https://github.com/nodejs/node/commit/dbdcded866)] - **deps**: upgrade to V8 5.0.71.54 (Ben Noordhuis) [#7531](https://github.com/nodejs/node/pull/7531)
+* [[`059a721ec5`](https://github.com/nodejs/node/commit/059a721ec5)] - **doc**: update CTC governance information (Rich Trott) [#7719](https://github.com/nodejs/node/pull/7719)
+* [[`62a3ff27d0`](https://github.com/nodejs/node/commit/62a3ff27d0)] - **doc**: correct sample output of buf.compare (Hargobind S. Khalsa) [#7777](https://github.com/nodejs/node/pull/7777)
+* [[`f7d3af67aa`](https://github.com/nodejs/node/commit/f7d3af67aa)] - **doc**: add `added:` information for stream (Italo A. Casas) [#7287](https://github.com/nodejs/node/pull/7287)
+* [[`669af6e6c8`](https://github.com/nodejs/node/commit/669af6e6c8)] - **doc**: fix inconsistencies in code style (saadq) [#7745](https://github.com/nodejs/node/pull/7745)
+* [[`c726ffb29c`](https://github.com/nodejs/node/commit/c726ffb29c)] - **doc**: Warn against `uncaughtException` dependency. (Lance Ball) [#6378](https://github.com/nodejs/node/pull/6378)
+* [[`46b9ef6db2`](https://github.com/nodejs/node/commit/46b9ef6db2)] - **doc**: fix typo in stream doc (Kevin Donahue) [#7738](https://github.com/nodejs/node/pull/7738)
+* [[`f0d96103ff`](https://github.com/nodejs/node/commit/f0d96103ff)] - **doc**: removed old git conflict markers from fs.md (Jaime Hidalgo García) [#7590](https://github.com/nodejs/node/pull/7590)
+* [[`45a8fce5a4`](https://github.com/nodejs/node/commit/45a8fce5a4)] - **doc**: fix typo in the CHANGELOG_V6 (vsemozhetbyt) [#7568](https://github.com/nodejs/node/pull/7568)
+* [[`f15d2d6dae`](https://github.com/nodejs/node/commit/f15d2d6dae)] - **doc**: fix util.deprecate() example (Evan Lucas) [#7674](https://github.com/nodejs/node/pull/7674)
+* [[`58b70d34ee`](https://github.com/nodejs/node/commit/58b70d34ee)] - **doc**: link and highlight Object.assign (Sakthipriyan Vairamani) [#7670](https://github.com/nodejs/node/pull/7670)
+* [[`cc7fdf429e`](https://github.com/nodejs/node/commit/cc7fdf429e)] - **doc**: grammar fixes to event loop guide (Ryan Lewis) [#7479](https://github.com/nodejs/node/pull/7479)
+* [[`a81ff702cc`](https://github.com/nodejs/node/commit/a81ff702cc)] - **doc**: dns.resolve fix callback argument description (Quentin Headen) [#7532](https://github.com/nodejs/node/pull/7532)
+* [[`f0c335c347`](https://github.com/nodejs/node/commit/f0c335c347)] - **doc**: add benchmark who-to-CC info (Rich Trott) [#7604](https://github.com/nodejs/node/pull/7604)
+* [[`9e0cba0552`](https://github.com/nodejs/node/commit/9e0cba0552)] - **doc**: added information on how to run the linter. (Diosney Sarmiento) [#7534](https://github.com/nodejs/node/pull/7534)
+* [[`e13ee29cbd`](https://github.com/nodejs/node/commit/e13ee29cbd)] - **doc**: delete non-existing zlib constants (Franziska Hinkelmann) [#7520](https://github.com/nodejs/node/pull/7520)
+* [[`663b103bc5`](https://github.com/nodejs/node/commit/663b103bc5)] - **doc**: fix minor style issues in http.md (Rich Trott) [#7528](https://github.com/nodejs/node/pull/7528)
+* [[`6c4d4596cc`](https://github.com/nodejs/node/commit/6c4d4596cc)] - **doc**: updating REPLACEME tag during release (Gibson Fahnestock) [#7514](https://github.com/nodejs/node/pull/7514)
+* [[`b4547340ee`](https://github.com/nodejs/node/commit/b4547340ee)] - **doc**: fix detached child stdio example (cjihrig) [#7540](https://github.com/nodejs/node/pull/7540)
+* [[`0f7b4efaaf`](https://github.com/nodejs/node/commit/0f7b4efaaf)] - **doc**: add bartosz sosnowski to colaborators (Bartosz Sosnowski) [#7567](https://github.com/nodejs/node/pull/7567)
+* [[`77afeb2ec7`](https://github.com/nodejs/node/commit/77afeb2ec7)] - **doc,dgram**: fix addMembership documentation (Santiago Gimeno) [#7244](https://github.com/nodejs/node/pull/7244)
+* [[`f00346500a`](https://github.com/nodejs/node/commit/f00346500a)] - **fs**: rename event to eventType in fs.watch listener (Claudio Rodriguez) [#7506](https://github.com/nodejs/node/pull/7506)
+* [[`43b5bf4616`](https://github.com/nodejs/node/commit/43b5bf4616)] - **inspector**: Unify event queues (Eugene Ostroukhov) [#7271](https://github.com/nodejs/node/pull/7271)
+* [[`fc0ed2e8c7`](https://github.com/nodejs/node/commit/fc0ed2e8c7)] - **lib,benchmark,test**: implement consistent braces (Rich Trott) [#7630](https://github.com/nodejs/node/pull/7630)
+* [[`80ca0630a6`](https://github.com/nodejs/node/commit/80ca0630a6)] - **net**: export isIPv4, isIPv6 directly from cares (Sakthipriyan Vairamani) [#7481](https://github.com/nodejs/node/pull/7481)
+* [[`61d88d959f`](https://github.com/nodejs/node/commit/61d88d959f)] - **src**: remove unnecessary HandleScopes (Ben Noordhuis) [#7711](https://github.com/nodejs/node/pull/7711)
+* [[`e46efd9244`](https://github.com/nodejs/node/commit/e46efd9244)] - **src**: fix handle leak in UDPWrap::Instantiate() (Ben Noordhuis) [#7711](https://github.com/nodejs/node/pull/7711)
+* [[`978362d3b6`](https://github.com/nodejs/node/commit/978362d3b6)] - **src**: fix handle leak in BuildStatsObject() (Ben Noordhuis) [#7711](https://github.com/nodejs/node/pull/7711)
+* [[`06bfb9e93c`](https://github.com/nodejs/node/commit/06bfb9e93c)] - **src**: fix handle leak in Buffer::New() (Ben Noordhuis) [#7711](https://github.com/nodejs/node/pull/7711)
+* [[`fbc9ef84b8`](https://github.com/nodejs/node/commit/fbc9ef84b8)] - **src**: disable stdio buffering (Ben Noordhuis) [#7610](https://github.com/nodejs/node/pull/7610)
+* [[`9d59b7d1f7`](https://github.com/nodejs/node/commit/9d59b7d1f7)] - **test**: avoid usage of mixed IPV6 addresses (Gireesh Punathil) [#7702](https://github.com/nodejs/node/pull/7702)
+* [[`aa045cd226`](https://github.com/nodejs/node/commit/aa045cd226)] - **test**: fix flaky test-http-server-consumed-timeout (Rich Trott) [#7717](https://github.com/nodejs/node/pull/7717)
+* [[`17591c3964`](https://github.com/nodejs/node/commit/17591c3964)] - **test**: s/assert.fail/common.fail as appropriate (cjihrig) [#7735](https://github.com/nodejs/node/pull/7735)
+* [[`d224b47b3a`](https://github.com/nodejs/node/commit/d224b47b3a)] - **test**: improve error message in test-tick-processor (Rich Trott) [#7693](https://github.com/nodejs/node/pull/7693)
+* [[`1af8c03c99`](https://github.com/nodejs/node/commit/1af8c03c99)] - **test**: cleanup IIFE tests (cjihrig) [#7694](https://github.com/nodejs/node/pull/7694)
+* [[`ccd498359b`](https://github.com/nodejs/node/commit/ccd498359b)] - **test**: add common.rootDir (cjihrig) [#7685](https://github.com/nodejs/node/pull/7685)
+* [[`9797969ad4`](https://github.com/nodejs/node/commit/9797969ad4)] - **test**: fix old tty tests (Jeremiah Senkpiel) [#7613](https://github.com/nodejs/node/pull/7613)
+* [[`37dc7954d8`](https://github.com/nodejs/node/commit/37dc7954d8)] - **test**: move parallel/test-tty-* to pseudo-tty/ (Jeremiah Senkpiel) [#7613](https://github.com/nodejs/node/pull/7613)
+* [[`5192bed68c`](https://github.com/nodejs/node/commit/5192bed68c)] - **test**: remove unused var from child-process-fork (Rich Trott) [#7599](https://github.com/nodejs/node/pull/7599)
+* [[`e1aedbf671`](https://github.com/nodejs/node/commit/e1aedbf671)] - **test**: remove unused vars from http/https tests (Rich Trott) [#7598](https://github.com/nodejs/node/pull/7598)
+* [[`64e2eed662`](https://github.com/nodejs/node/commit/64e2eed662)] - **test**: remove unused var in test-tls-server-verify (Rich Trott) [#7595](https://github.com/nodejs/node/pull/7595)
+* [[`8e50413b7e`](https://github.com/nodejs/node/commit/8e50413b7e)] - **test**: fix flaky test-fs-read-buffer-tostring-fail (Rich Trott) [#7575](https://github.com/nodejs/node/pull/7575)
+* [[`447a8f26e1`](https://github.com/nodejs/node/commit/447a8f26e1)] - **test**: remove unused var in net-server-try-ports (Rich Trott) [#7597](https://github.com/nodejs/node/pull/7597)
+* [[`326006527d`](https://github.com/nodejs/node/commit/326006527d)] - **test**: remove unused var from stream2 test (Rich Trott) [#7596](https://github.com/nodejs/node/pull/7596)
+* [[`97167291e7`](https://github.com/nodejs/node/commit/97167291e7)] - **test**: fix flaky test-net-write-slow (Rich Trott) [#7555](https://github.com/nodejs/node/pull/7555)
+* [[`657fd7aee9`](https://github.com/nodejs/node/commit/657fd7aee9)] - **test**: skip doctool tests when js-yaml is missing (Anna Henningsen) [#7218](https://github.com/nodejs/node/pull/7218)
+* [[`25b3ff402d`](https://github.com/nodejs/node/commit/25b3ff402d)] - **test,doc**: clarify `buf.indexOf(num)` input range (Anna Henningsen) [#7611](https://github.com/nodejs/node/pull/7611)
+* [[`9d9bd3cabb`](https://github.com/nodejs/node/commit/9d9bd3cabb)] - **timers**: fix processing of nested timers (Jeremy Whitlock) [#3063](https://github.com/nodejs/node/pull/3063)
+* [[`8bbb3eb32c`](https://github.com/nodejs/node/commit/8bbb3eb32c)] - **tools**: consistent .eslintrc formatting (silverwind) [#7691](https://github.com/nodejs/node/pull/7691)
+* [[`9db861b650`](https://github.com/nodejs/node/commit/9db861b650)] - **tools**: increase lint coverage (Rich Trott) [#7647](https://github.com/nodejs/node/pull/7647)
+* [[`a82573d480`](https://github.com/nodejs/node/commit/a82573d480)] - **tools**: enforce JS brace style with linting (Rich Trott) [#7630](https://github.com/nodejs/node/pull/7630)
+* [[`8efca46e78`](https://github.com/nodejs/node/commit/8efca46e78)] - **tools**: fix broken format string (Sakthipriyan Vairamani) [#7620](https://github.com/nodejs/node/pull/7620)
+* [[`2bef583f8a`](https://github.com/nodejs/node/commit/2bef583f8a)] - **tools**: cleanup no-build and build-only options (Sakthipriyan Vairamani) [#7620](https://github.com/nodejs/node/pull/7620)
+* [[`df697c486e`](https://github.com/nodejs/node/commit/df697c486e)] - **tools**: update ESLint, fix unused vars bug (Rich Trott) [#7601](https://github.com/nodejs/node/pull/7601)
+* [[`1a360d63db`](https://github.com/nodejs/node/commit/1a360d63db)] - **tools**: remove unused variable (Rich Trott) [#7594](https://github.com/nodejs/node/pull/7594)
+* [[`fa99dadda4`](https://github.com/nodejs/node/commit/fa99dadda4)] - **tools**: remove unnecessary imports and assignments (Sakthipriyan Vairamani) [#7483](https://github.com/nodejs/node/pull/7483)
+* [[`60c459c90f`](https://github.com/nodejs/node/commit/60c459c90f)] - **util**: inspect boxed symbols like other primitives (Anna Henningsen) [#7641](https://github.com/nodejs/node/pull/7641)
+* [[`e1e477e2a0`](https://github.com/nodejs/node/commit/e1e477e2a0)] - **win,msi**: add zh-CN translations for the installer (Minqi Pan) [#2569](https://github.com/nodejs/node/pull/2569)
+* [[`f25c7ceb73`](https://github.com/nodejs/node/commit/f25c7ceb73)] - **win,msi**: Added Italian translation (Matteo Collina) [#4647](https://github.com/nodejs/node/pull/4647)
 
 <a id="6.3.0"></a>
 ## 2016-07-06, Version 6.3.0 (Current), @Fishrock123
