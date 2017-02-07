@@ -58,13 +58,13 @@ is a high priority, and will not be broken unless absolutely necessary.
 
 ```txt
 Stability: 3 - Locked
-Only fixes related to security, performance, or bug fixes will be accepted.
+Only bug fixes, security fixes, and performance improvements will be accepted.
 Please do not suggest API changes in this area; they will be refused.
 ```
 
 ## JSON Output
 
-    Stability: 1 - Experimental
+> Stability: 1 - Experimental
 
 Every HTML file in the markdown has a corresponding JSON file with the
 same data.

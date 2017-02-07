@@ -31,7 +31,7 @@ for (;;) {
   try {
     openFds.push(fs.openSync(__filename, 'r'));
   } catch (err) {
-    assert(err.code === 'EMFILE');
+    assert.strictEqual(err.code, 'EMFILE');
     break;
   }
 }
@@ -43,9 +43,7 @@ proc.on('error', common.mustCall(function(err) {
   assert.strictEqual(err.code, 'EMFILE');
 }));
 
-proc.on('exit', function() {
-  common.fail('"exit" should not be emitted (the process never spawned!)');
-});
+proc.on('exit', common.mustNotCall('"exit" event should not be emitted'));
 
 // close one fd for LSan
 if (openFds.length >= 1) {

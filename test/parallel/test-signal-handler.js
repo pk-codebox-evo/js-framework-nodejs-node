@@ -18,18 +18,18 @@ process.on('SIGUSR1', common.mustCall(function() {
   }, 5);
 }));
 
-var i = 0;
+let i = 0;
 setInterval(function() {
   console.log('running process...' + ++i);
 
-  if (i == 5) {
+  if (i === 5) {
     process.kill(process.pid, 'SIGUSR1');
   }
 }, 1);
 
 // Test on condition where a watcher for SIGNAL
 // has been previously registered, and `process.listeners(SIGNAL).length === 1`
-process.on('SIGHUP', function() {});
+process.on('SIGHUP', common.mustNotCall());
 process.removeAllListeners('SIGHUP');
 process.on('SIGHUP', common.mustCall(function() {}));
 process.kill(process.pid, 'SIGHUP');

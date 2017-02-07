@@ -1,9 +1,9 @@
 'use strict';
 const common = require('../common');
-var assert = require('assert');
-var cluster = require('cluster');
+const assert = require('assert');
+const cluster = require('cluster');
 
-var SENTINEL = 42;
+const SENTINEL = 42;
 
 // workers forcibly exit when control channel is disconnected, if
 // their .exitedAfterDisconnect flag isn't set
@@ -29,20 +29,16 @@ checkForced();
 
 function checkUnforced() {
   cluster.fork()
-  .on('online', function() {
-    this.disconnect();
-  })
-  .on('exit', common.mustCall(function(status) {
-    assert.equal(status, SENTINEL);
-  }));
+    .on('online', function() { this.disconnect(); })
+    .on('exit', common.mustCall(function(status) {
+      assert.strictEqual(status, SENTINEL);
+    }));
 }
 
 function checkForced() {
   cluster.fork()
-  .on('online', function() {
-    this.process.disconnect();
-  })
-  .on('exit', common.mustCall(function(status) {
-    assert.equal(status, 0);
-  }));
+    .on('online', function() { this.process.disconnect(); })
+    .on('exit', common.mustCall(function(status) {
+      assert.strictEqual(status, 0);
+    }));
 }

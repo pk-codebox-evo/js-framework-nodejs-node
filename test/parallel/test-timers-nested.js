@@ -1,7 +1,7 @@
 'use strict';
 
-const assert = require('assert');
 const common = require('../common');
+const assert = require('assert');
 
 // Make sure we test 0ms timers, since they would had always wanted to run on
 // the current tick, and greater than 0ms timers, for scenarios where the
@@ -11,7 +11,7 @@ const common = require('../common');
 const scenarios = [0, 100];
 
 scenarios.forEach(function(delay) {
-  var nestedCalled = false;
+  let nestedCalled = false;
 
   setTimeout(function A() {
     // Create the nested timer with the same delay as the outer timer so that it

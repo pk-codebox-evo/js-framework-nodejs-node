@@ -1,6 +1,6 @@
 # TTY
 
-    Stability: 2 - Stable
+> Stability: 2 - Stable
 
 The `tty` module provides the `tty.ReadStream` and `tty.WriteStream` classes.
 In most cases, it will not be necessary or possible to use this module directly.
@@ -49,6 +49,13 @@ raw device. Defaults to `false`.
 <!-- YAML
 added: v0.7.7
 -->
+
+Allows configuration of `tty.ReadStream` so that it operates as a raw device.
+
+When in raw mode, input is always available character-by-character, not
+including modifiers. Additionally, all special processing of characters by the
+terminal is disabled, including echoing input characters.
+Note that `CTRL`+`C` will no longer cause a `SIGINT` when in this mode.
 
 * `mode` {boolean} If `true`, configures the `tty.ReadStream` to operate as a
   raw device. If `false`, configures the `tty.ReadStream` to operate in its
